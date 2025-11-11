@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy 15th Birthday Nalendra Maheswara!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background: linear-gradient(
+          135deg,
+          #0f2027 0%,
+          #203a43 50%,
+          #2c5364 100%
+        );
+        color: #e0e0e0;
+        min-height: 100vh;
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        text-align: center;
+        padding: 40px 0;
+        animation: fadeIn 2s ease;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .age {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: #00f2fe;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 0;
+        text-align: center;
+      }
+
+      .birthday-cake {
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        position: relative;
+        animation: bounce 2s infinite alternate;
+      }
+
+      .birthday-cake i {
+        font-size: 80px;
+        color: #0f2027;
+      }
+
+      .birthday-cake::after {
+        content: "15";
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: #ff8c00;
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .message {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 30px;
+        border-radius: 15px;
+        margin: 30px 0;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        max-width: 800px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .message h2 {
+        margin-bottom: 20px;
+        color: #00f2fe;
+      }
+
+      .message p {
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+
+      .gallery-section {
+        margin: 50px 0;
+      }
+
+      .gallery-section h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #00f2fe;
+      }
+
+      .gallery {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 20px 0;
+        gap: 20px;
+      }
+
+      .gallery::-webkit-scrollbar {
+        height: 10px;
+      }
+
+      .gallery::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+      }
+
+      .gallery::-webkit-scrollbar-thumb {
+        background: #00f2fe;
+        border-radius: 10px;
+      }
+
+      .photo {
+        flex: 0 0 auto;
+        width: 300px;
+        height: 300px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        scroll-snap-align: start;
+        position: relative;
+        border: 2px solid rgba(79, 172, 254, 0.3);
+      }
+
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .photo:hover img {
+        transform: scale(1.1);
+      }
+
+      .photo-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(15, 32, 39, 0.85);
+        padding: 10px;
+        text-align: center;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .photo:hover .photo-caption {
+        transform: translateY(0);
+      }
+
+      .wishes-section {
+        margin: 50px 0;
+      }
+
+      .wishes-section h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #00f2fe;
+      }
+
+      .wishes-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .wish-card {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 20px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .wish-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .wish-card h3 {
+        color: #00f2fe;
+        margin-bottom: 10px;
+      }
+
+      .send-wish {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 30px;
+        border-radius: 15px;
+        margin: 50px 0;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .send-wish h2 {
+        margin-bottom: 20px;
+        color: #00f2fe;
+      }
+
+      .wish-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .wish-form input,
+      .wish-form textarea {
+        padding: 15px;
+        border: none;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.9);
+        font-size: 1rem;
+        color: #0f2027;
+      }
+
+      .wish-form textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .send-btn {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        color: #0f2027;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .send-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .audio-control {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(79, 172, 254, 0.8);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        transition: all 0.3s ease;
+      }
+
+      .audio-control:hover {
+        background: rgba(0, 242, 254, 0.9);
+        transform: scale(1.1);
+      }
+
+      .audio-control i {
+        font-size: 24px;
+        color: #0f2027;
+      }
+
+      footer {
+        text-align: center;
+        padding: 30px 0;
+        margin-top: 50px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        color: #8a9ba8;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes bounce {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-20px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .age {
+          font-size: 1.5rem;
+        }
+
+        .birthday-cake {
+          width: 150px;
+          height: 150px;
+        }
+
+        .birthday-cake i {
+          font-size: 60px;
+        }
+
+        .message {
+          padding: 20px;
+        }
+
+        .photo {
+          width: 250px;
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Happy Birthday <bold>Nalendra Maheswara!</bold></h1>
+        <div class="age">15 Tahun Penuh Makna</div>
+        <h2>sebelum di baca musike nyalakna dikit</h2>
+      </header>
+
+      <section class="hero">
+        <div class="birthday-cake">
+          <i class="fas fa-birthday-cake"></i>
+        </div>
+        <div class="message">
+          <h2>Dari Kak Agung Untuk Mahes</h2>
+
+          <p>
+            Semoga di usiamu yang baru ini, segala hal baik datang menghampiri:
+            kesehatan yang tak pernah putus, kebahagiaan yang tulus, rezeki yang
+            berlimpah, dan cinta dari orang-orang terbaik di hidupmu. Semoga
+            setiap langkahmu selalu diberi kemudahan oleh Allah, setiap doa yang
+            kau panjatkan didengar dan dikabulkan, serta setiap impianmu
+            perlahan-lahan menjadi kenyataan. Teruslah jadi pribadi yang rendah
+            hati, penyabar, dan penuh semangat seperti yang kami kenal selama
+            ini. Jangan pernah ragu melangkah menuju masa depan, karena kamu
+            punya banyak potensi besar yang menunggu untuk bersinar.
+          </p>
+        </div>
+      </section>
+
+      <section class="gallery-section">
+        <h2>Galeri Kenangan</h2>
+        <div class="gallery">
+          <div class="photo">
+            <img src="foto1.jpg" alt="Foto Mahes 1" />
+            <div class="photo-caption">Bersama Teman-teman</div>
+          </div>
+          <div class="photo">
+            <img src="foto2.jpg" alt="Foto Mahes 2" />
+            <div class="photo-caption">Mbuh temen gaya apa</div>
+          </div>
+          <div class="photo">
+            <img src="logo3.jpg" alt="Foto Mahes 3" />
+            <div class="photo-caption">Saat Berprestasi</div>
+          </div>
+          <div class="photo">
+            <img src="foto4.jpg" alt="Foto Mahes 4" />
+            <div class="photo-caption">Bersama Keluarga</div>
+          </div>
+          <div class="photo">
+            <img src="foto1.jpg" alt="Foto Mahes 5" />
+            <div class="photo-caption">karo batur maning</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wishes-section">
+        <h2>Ucapan dari Teman-teman</h2>
+        <div class="wishes-container">
+          <div class="wish-card">
+            <h3>Pai</h3>
+            <p>
+              Selamat ulang tahun Mahes! Semoga panjang umur dan sehat selalu.
+              Sukses terus ya!
+            </p>
+          </div>
+          <div class="wish-card">
+            <h3>Moldy</h3>
+            <p>
+              Happy birthday bro! Semoga makin sukses dan jadi anak yang
+              membanggakan orang tua.
+            </p>
+          </div>
+          <div class="wish-card">
+            <h3>ii</h3>
+            <p>
+              Selamat ulang tahun Mahes! Semoga semua impianmu tercapai. Tetap
+              rendah hati dan baik ya!
+            </p>
+          </div>
+          <div class="wish-card">
+            <h3>Arya</h3>
+            <p>
+              Met ultah bro! Semoga makin keren dan jadi inspirasi buat banyak
+              orang.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="send-wish">
+        <h2>Kirim Ucapan untuk Kak Agung</h2>
+        <form class="wish-form" id="wishForm">
+          <input type="text" id="senderName" placeholder="Nama Anda" required />
+          <textarea
+            id="wishMessage"
+            placeholder="Tulis ucapan Untuk Pembuat..."
+            required
+          ></textarea>
+          <button type="submit" class="send-btn">
+            <i class="fab fa-whatsapp"></i> Kirim via WhatsApp
+          </button>
+        </form>
+      </section>
+
+      <footer>
+        <p>
+          Dibuat Agung Ubaidillah untuk Nalendra Maheswara di ulang tahunnya
+          yang ke-15
+        </p>
+      </footer>
+    </div>
+
+    <div class="audio-control" id="audioControl">
+      <i class="fas fa-pause"></i>
+    </div>
+
+    <audio id="birthdaySong" loop autoplay>
+      <source src="lagu.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      // Musik otomatis dimulai
+      document.addEventListener("DOMContentLoaded", function () {
+        const audio = document.getElementById("birthdaySong");
+        const audioControl = document.getElementById("audioControl");
+
+        // Coba putar musik
+        const playAudio = () => {
+          audio
+            .play()
+            .then(() => {
+              console.log("Musik berhasil diputar");
+            })
+            .catch((error) => {
+              console.log("Autoplay diblokir, menunggu interaksi pengguna");
+              audioControl.style.display = "flex";
+            });
+        };
+
+        // Tunggu sedikit sebelum memutar
+        setTimeout(playAudio, 1000);
+
+        // Kontrol musik
+        audioControl.addEventListener("click", function () {
+          if (audio.paused) {
+            audio.play();
+            audioControl.innerHTML = '<i class="fas fa-pause"></i>';
+          } else {
+            audio.pause();
+            audioControl.innerHTML = '<i class="fas fa-play"></i>';
+          }
+        });
+      });
+
+      // Form kirim pesan WhatsApp
+      document
+        .getElementById("wishForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("senderName").value;
+          const message = document.getElementById("wishMessage").value;
+          const phoneNumber = "+6283148584061";
+
+          const fullMessage = `Assalamualaikum! Saya ${name}. ${message} , by Websiste Ultah Mahes  ! 🎉`;
+          const encodedMessage = encodeURIComponent(fullMessage);
+          const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+          window.open(whatsappURL, "_blank");
+
+          // Reset form
+          document.getElementById("wishForm").reset();
+
+          // Tampilkan pesan sukses
+          alert("Pesan berhasil dikirim! Terima kasih atas ucapanmu.");
+        });
+
+      // Animasi scroll untuk galeri
+      const gallery = document.querySelector(".gallery");
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      gallery.addEventListener("mousedown", (e) => {
+        isDown = true;
+        startX = e.pageX - gallery.offsetLeft;
+        scrollLeft = gallery.scrollLeft;
+      });
+
+      gallery.addEventListener("mouseleave", () => {
+        isDown = false;
+      });
+
+      gallery.addEventListener("mouseup", () => {
+        isDown = false;
+      });
+
+      gallery.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - gallery.offsetLeft;
+        const walk = (x - startX) * 2;
+        gallery.scrollLeft = scrollLeft - walk;
+      });
+
+      // Tambahkan event listener untuk sentuhan pada perangkat mobile
+      gallery.addEventListener("touchstart", (e) => {
+        isDown = true;
+        startX = e.touches[0].pageX - gallery.offsetLeft;
+        scrollLeft = gallery.scrollLeft;
+      });
+
+      gallery.addEventListener("touchend", () => {
+        isDown = false;
+      });
+
+      gallery.addEventListener("touchmove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.touches[0].pageX - gallery.offsetLeft;
+        const walk = (x - startX) * 2;
+        gallery.scrollLeft = scrollLeft - walk;
+      });
+    </script>
+  </body>
+</html>
